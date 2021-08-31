@@ -1,15 +1,15 @@
 ---
 home: true
-heroImage: https://v1.vuepress.vuejs.org/hero.png
+heroImage: /shanyi.jpeg
 tagline: 
-actionText: Quick Start →
+actionText: 壹之型 →
 actionLink: /guide/
 features:
-- title: Feature 1 Title
+- title: 六连
   details: Feature 1 Description
-- title: Feature 2 Title
+- title: 八连
   details: Feature 2 Description
-- title: Feature 3 Title
+- title: 神速
   details: Feature 3 Description
-footer: Made by  with ❤️
+footer: Made by  with thrownewerror
 ---

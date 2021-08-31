@@ -1,1 +1,1 @@
-# wangjinxu.top
+# Throw New Error
