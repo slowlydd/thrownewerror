@@ -34,29 +34,43 @@ module.exports = {
     lastUpdated: false,
     nav: [
       {
-        text: 'Guide',
-        link: '/guide/',
+        text: 'JavaScript',
+        link: '/javascript/',
       },
-      {
-        text: 'Config',
-        link: '/config/'
-      },
+      // {
+      //   text: 'Guide',
+      //   link: '/guide/',
+      // },
+      // {
+      //   text: 'Config',
+      //   link: '/config/'
+      // },
       {
         text: 'Github',
         link: 'https://github.com/wsWangjinxu'
       }
     ],
     sidebar: {
-      '/guide/': [
+      '/javascript/': [
         {
-          title: 'Guide',
+          title: 'JavaScript',
           collapsable: false,
           children: [
             '',
-            'using-vue',
+            'this',
           ]
         }
       ],
+      // '/guide/': [
+      //   {
+      //     title: 'Guide',
+      //     collapsable: false,
+      //     children: [
+      //       '',
+      //       'using-vue',
+      //     ]
+      //   }
+      // ],
     }
   },
 
