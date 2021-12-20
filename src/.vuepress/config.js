@@ -37,10 +37,10 @@ module.exports = {
         text: 'JavaScript',
         link: '/javascript/',
       },
-      // {
-      //   text: 'Guide',
-      //   link: '/guide/',
-      // },
+      {
+        text: 'Rust',
+        link: '/rust/',
+      },
       // {
       //   text: 'Config',
       //   link: '/config/'
@@ -58,6 +58,7 @@ module.exports = {
           children: [
             '',
             'this',
+            '闭包必知必会'
           ]
         }
       ],
