@@ -9,7 +9,7 @@
   },
   "repository": "/blog",
   "scripts": {
-    "dev": "vuepress dev src",
+    "dev": "vuepress dev src --temp .temp",
     "build": "vuepress build src"
   },
   "license": "MIT",
