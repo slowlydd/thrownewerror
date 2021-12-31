@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>闭包必知必会 | Throw New Error</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="">
+    <meta name="theme-color" content="#3eaf7c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    
+    <link rel="preload" href="/assets/css/0.styles.7855421e.css" as="style"><link rel="preload" href="/assets/js/app.7bb85581.js" as="script"><link rel="preload" href="/assets/js/2.715f5885.js" as="script"><link rel="preload" href="/assets/js/7.917d4fad.js" as="script"><link rel="prefetch" href="/assets/js/10.d9a81ed4.js"><link rel="prefetch" href="/assets/js/11.7acbcd74.js"><link rel="prefetch" href="/assets/js/12.a6e4ab76.js"><link rel="prefetch" href="/assets/js/13.bd49815a.js"><link rel="prefetch" href="/assets/js/14.9e42801d.js"><link rel="prefetch" href="/assets/js/15.8f2bf906.js"><link rel="prefetch" href="/assets/js/3.bd3b0cc9.js"><link rel="prefetch" href="/assets/js/4.7b45d655.js"><link rel="prefetch" href="/assets/js/5.47fff4d8.js"><link rel="prefetch" href="/assets/js/6.6da5094c.js"><link rel="prefetch" href="/assets/js/8.e5eccf69.js"><link rel="prefetch" href="/assets/js/9.04b20790.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.7855421e.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Throw New Error</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/blog/javascript/" class="nav-link router-link-active">
+  Blog
+</a></div><div class="nav-item"><a href="https://leetcode-cn.com/u/wswangjinxu/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  LeetCode
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="https://github.com/wsWangjinxu" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/blog/javascript/" class="nav-link router-link-active">
+  Blog
+</a></div><div class="nav-item"><a href="https://leetcode-cn.com/u/wswangjinxu/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  LeetCode
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="https://github.com/wsWangjinxu" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>JavaScript</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/javascript/" aria-current="page" class="sidebar-link">概览</a></li><li><a href="/blog/javascript/this.html" class="sidebar-link">this 到底指向谁</a></li><li><a href="/blog/javascript/闭包必知必会.html" class="active sidebar-link">闭包必知必会</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/javascript/闭包必知必会.html#什么是闭包" class="sidebar-link">什么是闭包</a></li><li class="sidebar-sub-header"><a href="/blog/javascript/闭包必知必会.html#闭包是如何产生的" class="sidebar-link">闭包是如何产生的？</a></li><li class="sidebar-sub-header"><a href="/blog/javascript/闭包必知必会.html#与闭包相关的概念" class="sidebar-link">与闭包相关的概念</a></li><li class="sidebar-sub-header"><a href="/blog/javascript/闭包必知必会.html#闭包的常见应用" class="sidebar-link">闭包的常见应用</a></li><li class="sidebar-sub-header"><a href="/blog/javascript/闭包必知必会.html#闭包会引起的问题" class="sidebar-link">闭包会引起的问题</a></li><li class="sidebar-sub-header"><a href="/blog/javascript/闭包必知必会.html#面试题实战" class="sidebar-link">面试题实战</a></li></ul></li><li><a href="/blog/javascript/内存管理与垃圾回收.html" class="sidebar-link">垃圾回收</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>Rust</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/rust/" class="sidebar-link">概览</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="闭包必知必会"><a href="#闭包必知必会" class="header-anchor">#</a> 闭包必知必会</h1> <p>闭包是 js 中常见的知识点，也是面试中常考的知识点。对于闭包你需要掌握以下几点：</p> <ul><li>什么是闭包？</li> <li>闭包是如何产生的？</li> <li>与闭包相关的概念</li> <li>闭包的常见应用</li> <li>闭包会引起的问题</li> <li>面试题实战</li></ul> <h2 id="什么是闭包"><a href="#什么是闭包" class="header-anchor">#</a> 什么是闭包</h2> <blockquote><p>闭包是函数和与其相关的引用环境组合而成的实体。</p></blockquote> <p>闭包是在实现深约束时，需要创建一个能显示表示引用环境的东西，并将它与相关的子程序捆绑在一起，这样捆绑起来的整体被称为闭包。</p> <h3 id="闭包与函数的重要区别"><a href="#闭包与函数的重要区别" class="header-anchor">#</a> 闭包与函数的重要区别</h3> <p>很多时候闭包和函数是分不开的，更有甚者认为函数就是闭包。但其实这是不准确的。<strong>函数是一些可执行的代码，这些代码在函数被定义后就确定了，不会在执行时发生变化，所以一个函数只有一个实例</strong>。<strong>闭包在运行时可以有多个实例，不同的引用环境和相同的函数组合可以产生不同的实例</strong>。所谓引用环境是指在程序执行中的某个点所有处于活跃状态的约束组成的集合。其中的约束是指一个变量的名字和其所代表的对象之间的联系。</p> <p>那么在 js 中，闭包是如何产生的哪？</p> <h2 id="闭包是如何产生的"><a href="#闭包是如何产生的" class="header-anchor">#</a> 闭包是如何产生的？</h2> <blockquote><p>函数嵌套函数时，内层函数引用了外层函数作用域下的变量，并且内层函数在全局环境下可访问，就形成了闭包。</p></blockquote> <p>有闭包特性的语言往往有以下两个特点：</p> <ul><li>函数时一等公民，即函数可以作为另一个函数的参数或者返回值，还可以作为一个变量的值（函数可以作为值传递）。</li> <li>函数可以嵌套定义，即在一个函数内部可以定义另一个函数</li></ul> <p>一个函数如何能封闭外部状态哪？<strong>当外部状态的 scope 失效的时候，还有一份保留在内部状态里面</strong>。在执行过程中，返回函数，或者将函数保留下来，并且函数中有自由变量就会形成闭包。<strong>一个函数中没有自由变量时，引用环境不会发生变化</strong>。</p> <blockquote><p>自由变量是指没有在相关函数作用域中声明，但是使用了的变量。</p></blockquote> <h2 id="与闭包相关的概念"><a href="#与闭包相关的概念" class="header-anchor">#</a> 与闭包相关的概念</h2> <p>说到这里，需要了解一下在 js 中与闭包相关的概念。</p> <h3 id="作用域"><a href="#作用域" class="header-anchor">#</a> 作用域</h3> <p>作用域其实就是一套<strong>用于在特定场景下查找变量的规则</strong>。在 ES6 出现之前只有函数作用域和全局作用域。</p> <h4 id="暂时性死区"><a href="#暂时性死区" class="header-anchor">#</a> 暂时性死区</h4> <p>在 ES6 之后则有了块级作用域。这里有一个需要注意的暂时性死区概念需要注意：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token punctuation">{</span>
+  <span class="token comment">// 在这条语句上边是无法访问变量 c 的</span>
+  <span class="token keyword">let</span> c <span class="token operator">=</span> <span class="token number">1</span>
+<span class="token punctuation">}</span>
+</code></pre></div><blockquote><p>在块级作用域中，如果在变量声明前访问该变量，就会报 referenceError 错误。</p></blockquote> <h4 id="默认参数的作用域"><a href="#默认参数的作用域" class="header-anchor">#</a> 默认参数的作用域</h4> <p>这里还有一个比较偏的知识点就是 ES6 默认参数的作用域问题。默认参数会形成一个单独的作用域。等到初始化结束，这个作用域会消失。这种语法行为，在不设置参数默认值时，是不会出现的。举个栗子：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">var</span> x <span class="token operator">=</span> <span class="token number">1</span>
+<span class="token keyword">function</span> <span class="token function">f</span><span class="token punctuation">(</span><span class="token parameter">x<span class="token punctuation">,</span> y <span class="token operator">=</span> x</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>y<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">f</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token comment">// 2 这里 y 的默认值等于传入的 x 的值</span>
+</code></pre></div><p>上边的默认值变量<code>y</code>后边的<code>x</code>并不是全局变量<code>x</code>，而是指向第一个参数<code>x</code>。
+这里只是简单举个栗子，详细请参考阮一峰大佬 《ES6 入门》的函数的扩展一节。</p> <h4 id="闭包与作用域"><a href="#闭包与作用域" class="header-anchor">#</a> 闭包与作用域</h4> <p>在 js 中，如果我们<strong>查找一个变量，在当前的作用域中，没有找到，都会向外层作用域中去查找</strong>。在两个函数嵌套的场景中，当我们在内层函数中访问一个不存在的变量时，就会去外层函数中查找。看下面一段代码：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">function</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> a <span class="token operator">=</span> <span class="token number">3</span>
+  <span class="token keyword">function</span> <span class="token function">bar</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+  <span class="token function">bar</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> 
+</code></pre></div><p>这里<code>bar</code>函数的作用域中并没有<code>a</code>变量，此时就会去外层作用域中查找，如果没有找到，就会去更外层的作用域中查找（这里对应全局作用域）。对于上边一段代码并不会形成闭包。<strong>原因是虽然内层函数引用了外层函数里的自由变量，但是这里并没有将内层函数保存下来</strong>。</p> <p>如果内层函数不能在全局环境下访问，就不会形成闭包，因为会随着执行栈的弹栈被销毁，<strong>如果内层函数在全局环境下可以被访问，就会形成闭包</strong>。将上边代码改一改：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">function</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> a <span class="token operator">=</span> <span class="token number">3</span>
+  <span class="token keyword">return</span> <span class="token keyword">function</span> <span class="token function">bar</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> a
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">let</span> getA <span class="token operator">=</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">debugger</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">getA</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">// 3</span>
+</code></pre></div><p>我在打印这里打上一个断点，可以在 Chrome 控制台里看到这些信息:
+<img src="/assets/img/closure.49225f30.jpg" alt="Closure">
+你会发现，如果在上边打印<code>a</code>代码中打上断点，你也会发现有类似的字段，那是不是说明也存在闭包哪？</p> <blockquote><p>答案是否定的。</p></blockquote> <h3 id="执行上下文和调用栈"><a href="#执行上下文和调用栈" class="header-anchor">#</a> 执行上下文和调用栈</h3> <p>为了解释上边的问题，简单说一下执行上下文和调用栈。</p> <p>执行上下文就是当前代码的执行环境和作用域，和前边的作用域链是完全不同的概念。执行上下文包含了作用域链。</p> <h4 id="代码执行的两个阶段"><a href="#代码执行的两个阶段" class="header-anchor">#</a> 代码执行的两个阶段</h4> <p>JavaScript 执行主要分为两个阶段：</p> <ul><li>代码预编译阶段</li> <li>代码执行阶段</li></ul> <p>预编译阶段是前置阶段，这个时候编译器将 js 代码编译成可执行的代码。执行阶段主要任务是执行代码，执行上下文在这个阶段全部创建完成。</p> <p>经过预编译过程，应该注意三点：</p> <ul><li>预编译阶段进行变量声明</li> <li>与编译阶段变量声明进行提升，但是值为 undefined</li> <li>预编译阶段所有非表达式的函数声明进行提升</li></ul> <p>作用域在预编译阶段确定，但是作用域链在执行上下文的创建阶段完全生成。因为函数在调用时，才会开始创建对应的执行上下文。执行上下文包括：</p> <ul><li>变量对象</li> <li>作用域链</li> <li>this</li></ul> <p>代码执行的整个过程：</p> <ul><li>预编译阶段创建变量对象（Variable Object），此时知识创建，而未赋值。</li> <li>代码执行阶段，变量对象转为激活对象(Active Object)，即完成 <code>VO -&gt; AO</code>。此时，作用域链将被确定</li></ul> <p>回到上边的代码，在执行过程中，经过预编译和代码的执行，当执行到<code>bar</code>时，会创建执行上下文，这里包括作用域链和变量对象。根据作用域的规则，在这里查找变量<code>a</code>时，并未找到，那么就会到外层作用域<code>foo</code>中找到<code>a</code>。这是不是就说明形成了闭包哪？还没完哪！</p> <h4 id="调用栈"><a href="#调用栈" class="header-anchor">#</a> 调用栈</h4> <p>我们在执行函数的时候，如果一个函数调用了另外一个函数，多个函数层层调用，便会形成一系列的调用栈。这个过程是<strong>后进先出</strong>，典型的栈数据结构。</p> <p>正常来讲，在函数执行完毕出栈时，函数内局部变量会在下一个垃圾回收节点会被回收，该函数对应的上下文会被销毁。也就是说，如果不将内层函数保存下来的话，函数会随着出栈，在垃圾回收时做清理工作，那么这个时候绑定的 <code>scope</code>也就是执行上下文，会被销毁掉。所以上文中的两段代码，只有将外层函数保存下来，才会产生闭包。</p> <h2 id="闭包的常见应用"><a href="#闭包的常见应用" class="header-anchor">#</a> 闭包的常见应用</h2> <p>知道了什么是闭包，也理解了闭包的本质，以及怎样才会形成闭包。下面可以了解下闭包的几种应用，或许你在日常的开发中已经用到不少了。</p> <h3 id="封装私有变量-存储计算的值"><a href="#封装私有变量-存储计算的值" class="header-anchor">#</a> 封装私有变量，存储计算的值</h3> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 将计算的结果保存在 sum 中</span>
+<span class="token keyword">function</span> <span class="token function">add</span><span class="token punctuation">(</span><span class="token parameter">init</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> sum <span class="token operator">=</span> init<span class="token punctuation">;</span>
+  <span class="token keyword">return</span> <span class="token keyword">function</span> <span class="token function">getSum</span><span class="token punctuation">(</span><span class="token parameter">number</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    sum <span class="token operator">+=</span> number<span class="token punctuation">;</span>
+    <span class="token keyword">return</span> sum<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="延迟计算"><a href="#延迟计算" class="header-anchor">#</a> 延迟计算</h3> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 延迟计算</span>
+<span class="token keyword">function</span> <span class="token function">add</span><span class="token punctuation">(</span><span class="token parameter">init</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> sum <span class="token operator">=</span> init<span class="token punctuation">;</span>
+  <span class="token keyword">var</span> args <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> <span class="token keyword">function</span> <span class="token function">getSum</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 当参数到达一定的数量时再进行运算</span>
+    args <span class="token operator">=</span> args<span class="token punctuation">.</span><span class="token function">concat</span><span class="token punctuation">(</span>Array<span class="token punctuation">.</span><span class="token function">from</span><span class="token punctuation">(</span>arguments<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>args<span class="token punctuation">.</span>length <span class="token operator">&gt;</span> <span class="token number">5</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> args<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        sum <span class="token operator">+=</span> args<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      <span class="token keyword">return</span> sum<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="延续局部变量的寿命"><a href="#延续局部变量的寿命" class="header-anchor">#</a> 延续局部变量的寿命</h3> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 这种方法会丢失 30% 左右的数据</span>
+<span class="token keyword">var</span> <span class="token function-variable function">report</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">src</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> img <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Image</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  img<span class="token punctuation">.</span>src <span class="token operator">=</span> src<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 把 img 变量封装起来，就可以解决请求丢失的问题</span>
+<span class="token keyword">var</span> report <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token keyword">var</span> imgs <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">src</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> img <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Image</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    imgs<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>img<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    img<span class="token punctuation">.</span>src <span class="token operator">=</span> src<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><p>img 对象经常用于进行数据上报，但是通过查询后台的记录可以得知，因为一些低版本的浏览器的实现可能存在 bug，在这些浏览器下使用 report 函数进行数据上报会丢失 30% 左右的数据，也就是说，report 函数并不是每一次都发起了 HTTP 请求。丢失数据的原因是 img 是 report 函数中的局部变量，当 report 函数调用结束后， img 局部变量随即被销毁，而此时或许还没来得及发出 HTTP 请求，所以此次请求就会丢失掉。</p> <h3 id="私有数据和应用程序接口"><a href="#私有数据和应用程序接口" class="header-anchor">#</a> 私有数据和应用程序接口</h3> <p>有时，你想强制程序与数据的交互方式，以便保护其完整性。通过是使用闭包，完全可以做到这一点。创建此类接口的一种常见方法就是从函数返回对象。这时，定义在原函数中的数据只能由返回对象上定义的方法访问，下面是一个例子：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">function</span> <span class="token function">makeCalendar</span><span class="token punctuation">(</span><span class="token parameter">name</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> calendar <span class="token operator">=</span> <span class="token punctuation">{</span>
+    owner<span class="token operator">:</span> name<span class="token punctuation">,</span>
+    events<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+  
+  <span class="token keyword">return</span> <span class="token punctuation">{</span>
+    <span class="token function-variable function">addEvent</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">event<span class="token punctuation">,</span> dateString</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">var</span> eventInfo <span class="token operator">=</span> <span class="token punctuation">{</span>
+        event<span class="token operator">:</span> event<span class="token punctuation">,</span>
+        date<span class="token operator">:</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span>dateString<span class="token punctuation">)</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">;</span>
+      calendar<span class="token punctuation">.</span>events<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>eventInfo<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      calendar<span class="token punctuation">.</span>events<span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span> b</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> a<span class="token punctuation">.</span>date <span class="token operator">-</span> b<span class="token punctuation">.</span>date<span class="token punctuation">;</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    
+    <span class="token function-variable function">listEvents</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>calendar<span class="token punctuation">.</span>events<span class="token punctuation">.</span>length <span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>calendar<span class="token punctuation">.</span>owner <span class="token operator">+</span> <span class="token string">&quot;'s events are: &quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        
+        calendar<span class="token punctuation">.</span>events<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">eventInfo</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token keyword">var</span> dateStr <span class="token operator">=</span> eventInfo<span class="token punctuation">.</span>date<span class="token punctuation">.</span><span class="token function">toLocaleDateString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+          <span class="token keyword">var</span> description <span class="token operator">=</span> dateStr <span class="token operator">+</span> <span class="token string">&quot;: &quot;</span> <span class="token operator">+</span> eventInfo<span class="token punctuation">.</span>event<span class="token punctuation">;</span>
+          
+          console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>description<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>calendar<span class="token punctuation">.</span>owner <span class="token operator">+</span> <span class="token string">&quot; has no events.&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="闭包会引起的问题"><a href="#闭包会引起的问题" class="header-anchor">#</a> 闭包会引起的问题</h2> <p>局部变量本来应该在函数退出的时候被解除引用，但如果局部变量被封闭在闭包形成的环境中，那么这个局部变量就会一直存在。在这个意义上看，闭包的确会使一些数据无法被及时销毁。使用闭包的一部分原因是我们选择主动把一些变量封闭在闭包中，因为可能在以后还需要使用这些变量，把这些变量放在闭包中和放在全局作用域，对内存方面的影响是一致的。如果在将来需要回收这些变量的时候，可以手动把这些变量设置为 null。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">function</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token number">4</span>
+  <span class="token keyword">function</span> <span class="token function">bar</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token operator">++</span>a<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">return</span> bar
+<span class="token punctuation">}</span>
+<span class="token keyword">var</span> bar <span class="token operator">=</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token function">bar</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment">// bar = null // 不会再用到 bar 的时候释放内存</span>
+</code></pre></div><h2 id="面试题实战"><a href="#面试题实战" class="header-anchor">#</a> 面试题实战</h2> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">const</span> foo <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> v <span class="token operator">=</span> <span class="token number">0</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> v<span class="token operator">++</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">10</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">// 10</span>
+</code></pre></div><p>这里自执行函数返回了内层的箭头函数并保存在<code>foo</code>函数中。这里产生了一个闭包，保存了变量<code>V</code>的值。并在每次执行后加 1。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">var</span> fn <span class="token operator">=</span> <span class="token keyword">null</span>
+<span class="token keyword">const</span> <span class="token function-variable function">foo</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token number">2</span>
+  <span class="token keyword">function</span> <span class="token function">innerFoo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+  fn <span class="token operator">=</span> <span class="token function">innerFoo</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">const</span> <span class="token function-variable function">bar</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token function">bar</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// 2</span>
+</code></pre></div><p>这里先执行了<code>foo</code>函数，将内层函数<code>innerFoo</code>保存在了全局变量<code>fn</code>中，形成了闭包。执行<code>fn</code>打印出<code>a</code>的值。</p> <h3 id="利用闭包实现单例模式"><a href="#利用闭包实现单例模式" class="header-anchor">#</a> 利用闭包实现单例模式</h3> <blockquote><p>单例模式，是一种常见的软件设计模式。保证一个类只有一个实例，并提供一个访问它的全局访问点。</p></blockquote> <div class="language-js extra-class"><pre class="language-js"><code>
+<span class="token keyword">function</span> <span class="token function">ThrowNewError</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// ...</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> getInstance <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> instance
+  <span class="token keyword">return</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>instance<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      instance <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ThrowNewError</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> instance
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/blog/javascript/this.html" class="prev">
+        this 到底指向谁
+      </a></span> <span class="next"><a href="/blog/javascript/内存管理与垃圾回收.html">
+        垃圾回收
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.7bb85581.js" defer></script><script src="/assets/js/2.715f5885.js" defer></script><script src="/assets/js/7.917d4fad.js" defer></script>
+  </body>
+</html>
